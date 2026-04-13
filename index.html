@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkpoint — Cloud Computing</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: #94a3b8;
+      font-size: 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* INFO CARD */
+    .info-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 1rem;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .info-item .label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #64748b;
+    }
+
+    .info-item .value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f1f5f9;
+    }
+
+    /* MEMBERS */
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #94a3b8;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #334155;
+    }
+
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .member-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 0.875rem;
+      padding: 1.25rem 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .member-card:hover {
+      border-color: #6366f1;
+      transform: translateY(-2px);
+    }
+
+    .member-card .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .member-card .name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 0.2rem;
+    }
+
+    .member-card .rm {
+      font-size: 0.78rem;
+      color: #64748b;
+      margin-bottom: 0.75rem;
+    }
+
+    .member-card .hobby-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #475569;
+      margin-bottom: 0.25rem;
+    }
+
+    .member-card .hobby {
+      font-size: 0.88rem;
+      color: #a78bfa;
+      font-style: italic;
+    }
+
+    /* PAAS */
+    .paas-card {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 1px solid #4f46e5;
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+
+    .paas-card .paas-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .paas-card h2 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #818cf8;
+      margin-bottom: 1rem;
+    }
+
+    .paas-card p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #cbd5e1;
+    }
+
+    footer {
+      text-align: center;
+      color: #475569;
+      font-size: 0.8rem;
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge">Cloud Computing — FIAP</div>
+    <h1>Checkpoint Azure</h1>
+    <p>Plataforma como Serviço na prática</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Turma / Professor -->
+    <div class="info-card">
+      <div class="info-item">
+        <span class="label">Professor</span>
+        <span class="value">Gabriel Henrique Boyczuk Arcanjo</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Turma</span>
+        <span class="value">4ESPW</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Disciplina</span>
+        <span class="value">Cloud Computing</span>
+      </div>
+    </div>
+
+    <!-- Membros -->
+    <div>
+      <div class="section-title">Integrantes do Grupo</div>
+      <div class="members-grid">
+
+        <div class="member-card">
+          <div class="avatar">D</div>
+          <div class="name">Davi Passanha de Sousa Guerra</div>
+          <div class="rm">RM551605</div>
+          <div class="hobby-label">Hobby</div>
+          <div class="hobby">Assistir o Cauã vibe codando</div>
+        </div>
+
+        <div class="member-card">
+          <div class="avatar">C</div>
+          <div class="name">Cauã Gonçalves de Jesus</div>
+          <div class="rm">RM97648</div>
+          <div class="hobby-label">Hobby</div>
+          <div class="hobby">Jogar Basquete</div>
+        </div>
+
+        <div class="member-card">
+          <div class="avatar">R</div>
+          <div class="name">Rui Amorim Siqueira</div>
+          <div class="rm">RM98436</div>
+          <div class="hobby-label">Hobby</div>
+          <div class="hobby">Treinar</div>
+        </div>
+
+        <div class="member-card">
+          <div class="avatar">L</div>
+          <div class="name">Luan Silveira Macea</div>
+          <div class="rm">RM98290</div>
+          <div class="hobby-label">Hobby</div>
+          <div class="hobby">Assistir o Rui</div>
+        </div>
+
+        <div class="member-card">
+          <div class="avatar">L</div>
+          <div class="name">Luigi Ferrara Sinno</div>
+          <div class="rm">RM98047</div>
+          <div class="hobby-label">Hobby</div>
+          <div class="hobby">Ver série</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- O que é PaaS -->
+    <div class="paas-card">
+      <div class="paas-icon">☁️</div>
+      <h2>O que é PaaS?</h2>
+      <p>
+        PaaS é o gerenciamento da plataforma sendo entregado como serviço,
+        fornecendo toda a infraestrutura necessária — servidores, rede, sistema
+        operacional e middleware — e deixando sob responsabilidade do assinante
+        apenas o software desenvolvido. Em outras palavras, o desenvolvedor
+        foca em escrever e evoluir a aplicação enquanto o provedor cuida de
+        tudo embaixo: escalabilidade, atualizações, segurança da plataforma e
+        disponibilidade. É a camada do meio entre IaaS (você gerencia tudo) e
+        SaaS (você só usa o produto final).
+      </p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Grupo 4ESPW &mdash; FIAP &mdash; 2025</p>
+  </footer>
+</body>
+</html>
